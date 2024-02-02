@@ -5,10 +5,10 @@ import javax.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.Arrays;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Entity;
 
 @Entity
 public class User {

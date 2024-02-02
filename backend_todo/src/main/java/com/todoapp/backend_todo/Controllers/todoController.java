@@ -84,7 +84,12 @@ public class todoController {
     @GetMapping("/api/todo/{pageNumber}/{pageSize}")
     public ResponseEntity<List<todoList>> readAllPages(Principal principal, @PathVariable String pageNumber,
             @PathVariable String pageSize, @RequestParam(required = false) String isCompleted) {
-        return new SomeData();
+        if (isCompleted != null) {
+            return new ResponseEntity<>(
+                    todoser.readAllByIsCompletedPageable(principal.getName(), isCompleted, pageNumber, pageSize),
+                    HttpStatus.OK);
+        }
+        return new ResponseEntity<>(todoser.readAllPageable(principal.getName(), pageNumber, pageSize), HttpStatus.OK);
     }
 
 }

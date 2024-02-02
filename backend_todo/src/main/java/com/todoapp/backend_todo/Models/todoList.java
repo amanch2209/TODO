@@ -2,9 +2,10 @@ package com.todoapp.backend_todo.Models;
 
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
