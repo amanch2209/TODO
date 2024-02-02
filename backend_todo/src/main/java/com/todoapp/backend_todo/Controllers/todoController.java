@@ -70,4 +70,14 @@ public class todoController {
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
     }
 
+    @ResponseStatus(code = HttpStatus.OK)
+    @GetMapping("/api/todo/count")
+    public ResponseEntity<countResponse> countAll(Principal principal,
+            @RequestParam(required = false) String isCompleted) {
+        if (isCompleted != null) {
+            return new ResponseEntity<>(todoser.countAllByIsCompleted(principal.getName(), isCompleted), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(todoser.countAll(principal.getName()), HttpStatus.OK);
+    }
+
 }

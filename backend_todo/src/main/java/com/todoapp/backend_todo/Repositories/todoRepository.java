@@ -13,7 +13,7 @@ public interface todoRepository extends JpaRepository<todoList, Long> {
 
     todoList findByUserNameAndId(String userName, long Id);
 
-    todoList countByUserName(String userName);
+    Long countByUserName(String userName);
 
-    todoList countByUserNameAndIsCompleted(String userName, boolean isCompleted);
+    Long countByUserNameAndIsCompleted(String userName, boolean isCompleted);
 }
