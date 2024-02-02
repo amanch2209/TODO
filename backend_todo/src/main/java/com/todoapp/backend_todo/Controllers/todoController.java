@@ -80,4 +80,11 @@ public class todoController {
         return new ResponseEntity<>(todoser.countAll(principal.getName()), HttpStatus.OK);
     }
 
+    @ResponseStatus(code = HttpStatus.OK)
+    @GetMapping("/api/todo/{pageNumber}/{pageSize}")
+    public ResponseEntity<List<todoList>> readAllPages(Principal principal, @PathVariable String pageNumber,
+            @PathVariable String pageSize, @RequestParam(required = false) String isCompleted) {
+        return new SomeData();
+    }
+
 }
